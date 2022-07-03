@@ -6,7 +6,7 @@ select OPCION in "SALIR" "statsWords" "statsUsageWords" "findNames" "statsSenten
 do
 	[ -e $OPCION ] && echo "Elegir opcion valida!" && continue
 	[ $REPLY == 1 ] && echo "Programa finalizado." && break
-	echo "Opcion elegida: " $OPCION
-	[[ $OPCION == 2 ]] && statsWords
+	
+	[[ $REPLY == 2 ]] && echo "Opcion elegida: $OPCION" && statsWords
 done
 
