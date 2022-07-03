@@ -1,6 +1,6 @@
 #!/bin/bash
 
 function test {
-	echo test
+	cat /text/text.txt
 }
 
