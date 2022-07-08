@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function statsUsageWords {
-	ROUTE_FILE="./text.txt"
+	ROUTE_FILE="/text/text.txt"
 	declare -A WORDS #Declara un diccionario
 
 	for WORD in $(cat $ROUTE_FILE)

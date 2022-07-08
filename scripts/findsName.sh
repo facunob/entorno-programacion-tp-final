@@ -1,11 +1,10 @@
 #!/bin/bash
 
 function findNames {
-	ROUTE_FILE=$1
-	#VAlidar??
+	ROUTE_FILE="/text/text.txt"
 
 	NAME_REGEX="^[A-Z]"
-	for word in $(cat "text.txt")
+	for word in $(cat $ROUTE_FILE)
 	do
 		[[ $word  =~ $NAME_REGEX ]] && echo "Es nombre propio: $word"
 	done
