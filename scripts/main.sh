@@ -2,6 +2,7 @@
 source /scripts/statsWords.sh
 source /scripts/statsUsageWords.sh
 source /scripts/findNames.sh
+source /scripts/statsSentences.sh
 
 
 echo "Seleccione una de las opciones para analisis de texto:"
@@ -13,6 +14,6 @@ do
 	[[ $REPLY == 2 ]] && echo "Opcion elegida: $OPCION" && statsWords
 	[[ $REPLY == 3 ]] && echo "Opcion elegida: $OPCION" && statsUsageWords
 	[[ $REPLY == 4 ]] && echo "Opcion elegida: $OPCION" && findNames
-
+	[[ $REPLY == 5 ]] && echo "Opcion elegida: $OPCION" && statsSentences
 done
 

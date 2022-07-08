@@ -1,0 +1,30 @@
+#!/bin/bash
+
+function statsSentences {
+  ROUTE_FILE="/text/text.txt"
+
+  CONTENT=$(cat $ROUTE_FILE)
+
+  LONGEST_SENTENCE_LENGTH=0
+  SHORTEST_SENTENCE_LENGTH=0
+
+  SENTENCE_COUNTER=0
+
+
+  CURRENT_SENTENCE_LENGTH=0
+  for (( i=0; i<${#CONTENT}; i++ )); do
+    CURRENT_SENTENCE_LENGTH=$(($CURRENT_SENTENCE_LENGTH+1))
+    CHARACTER="${CONTENT:$i:1}"
+    if [[ $CHARACTER == '.' ]]; then
+      [[ $CURRENT_SENTENCE_LENGTH > $LONGEST_SENTENCE_LENGTH ]] && LONGEST_SENTENCE_LENGTH=$CURRENT_SENTENCE_LENGTH
+      [[ $CURRENT_SENTENCE_LENGTH < $SHORTEST_SENTENCE_LENGTH || $SHORTEST_SENTENCE_LENGTH == 0 ]] && SHORTEST_SENTENCE_LENGTH=$CURRENT_SENTENCE_LENGTH
+      CURRENT_SENTENCE_LENGTH=0
+      SENTENCE_COUNTER=$(($SENTENCE_COUNTER+1))
+    fi
+  done
+
+  echo "La oracion mas corta tiene: $SHORTEST_SENTENCE_LENGTH caracteres."
+  echo "La oracion mas larga tiene: $LONGEST_SENTENCE_LENGTH caracteres."
+  PROM=$((${#CONTENT}/$SENTENCE_COUNTER))
+  echo "El promedio de longitude de las oraciones es : $PROM."
+}
