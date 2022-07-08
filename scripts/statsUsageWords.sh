@@ -26,7 +26,7 @@ function statsUsageWords {
 			[[ $USAGE > $MOST_USAGE ]] && MOST_USAGE_WORD=$WORD && MOST_USAGE=$USAGE
 		done
 
-		[[ $MOST_USAGE -eq 0 ]] && exit 0
+		[[ $MOST_USAGE -eq 0 ]] && break
 
 		echo "$I) $MOST_USAGE_WORD: $MOST_USAGE usos."
 		WORDS[$MOST_USAGE_WORD]=0
