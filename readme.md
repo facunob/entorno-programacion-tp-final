@@ -6,4 +6,4 @@ Para poder ejecutar el programa es necesario tener instalado Docker y ejecutar l
 
   $ docker build --tag analisis_texto_image . #crea la imagen docker con el tag "analisis_texto_image"
 
-  $ docker run -it --name analisis_texto analisis_text0_image
+  $ docker run -it --name analisis_texto analisis_texto_image
