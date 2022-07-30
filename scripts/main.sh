@@ -1,7 +1,7 @@
 #!/bin/bash
 source /scripts/statsWords.sh
 source /scripts/statsUsageWords.sh
-source /scripts/findNames.sh
+source /scripts/findsNames.sh
 source /scripts/statsSentences.sh
 source /scripts/blankLinesCounter.sh
 
@@ -16,6 +16,6 @@ do
 	[[ $REPLY == 3 ]] && echo "-----> Opcion elegida: $OPCION" && statsUsageWords
 	[[ $REPLY == 4 ]] && echo "-----> Opcion elegida: $OPCION" && findNames
 	[[ $REPLY == 5 ]] && echo "-----> Opcion elegida: $OPCION" && statsSentences
-	[[ $REPLY == 5 ]] && echo "-----> Opcion elegida: $OPCION" && blankLinesCounter
+	[[ $REPLY == 6 ]] && echo "-----> Opcion elegida: $OPCION" && blankLinesCounter
 done
 
